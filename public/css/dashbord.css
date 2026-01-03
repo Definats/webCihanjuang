@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f6f6f6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #e6f2f0, #fff3d9);
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    /* SEMBUNYIKAN MENU TEKS */
+    .nav-menu {
+        display: none;
+        width: 100%;
+        background: white;
+        margin-top: 15px;
+        padding: 10px 0;
+        border-radius: 12px;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px 20px;
+    }
+
+    /* SAAT ICON DIKLIK */
+    .nav-menu.show {
+        display: block;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+}
+/* DROPDOWN PROFIL */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* Desktop dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background: #f3f3f3;
+}
+
+/* ACTIVE */
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+/* HERO */
+.hero {
+    padding: 20px 100px;
+}
+
+.hero-box {
+    height: 320px;
+    background: #ddd;
+    border-radius: 20px;
+}
+
+/* SECTION */
+.section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(90deg, #e6f2f0, #fff3d9);
+    border-radius: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 14px;
+    color: #777;
+}
+
+.activity h4 {
+    margin-bottom: 10px;
+}
+
+/* MAP */
+.map-box {
+    height: 350px;
+    background: #ddd;
+    border-radius: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(90deg, #e6f2f0, #fff3d9);
+    padding: 40px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-left img {
+    width: 250px;
+}
+
+.social img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

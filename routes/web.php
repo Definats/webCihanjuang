@@ -31,3 +31,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
 //user
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 });
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('user.dashboard-public');
+});
+Route::get('/searchresult', [ProductController::class, 'search']);
+Route::get('/deskripsi', [ProductController::class, 'detail']);
+Route::get('/category', [ProductController::class, 'category']);
+Route::get('/beranda', function () {
+    return view('user.dashboard-public');
+});

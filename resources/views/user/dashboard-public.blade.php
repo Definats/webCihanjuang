@@ -12,11 +12,13 @@
 <header class="navbar">
     <div class="nav-container">
         <div class="logo">
-            <img src="{{ asset('images/logocihanjuang.png') }}" alt="Logo Desa">
-            <div>
-                <strong>Desa Cihanjuang</strong><br>
-                <small>Kabupaten Bandung Barat</small>
-            </div>
+            <a href="{{ route('dashboard') }}" class="logo-link">
+                <img src="{{ asset('images/logocihanjuang.png') }}" alt="Logo Desa">
+                <div>
+                    <strong>Desa Cihanjuang</strong><br>
+                    <small>Kabupaten Bandung Barat</small>
+                </div>
+            </a>
         </div>
 
         <nav class="nav-menu">
@@ -52,7 +54,7 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function (e
 </script>
 <!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="hero-box"></div>
+    <img src="{{ asset('images/postercihanjuang.png') }}" alt="Hero Desa">
 </section>
 
 <!-- ================= BERITA ================= -->

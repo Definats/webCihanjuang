@@ -1,0 +1,107 @@
+/* ===== BODY ===== */
+body {
+    background: #f4f4f4;
+}
+
+/* ================= HEADER ================= */
+.profil-header {
+    background: linear-gradient(120deg, #dff3f8, #fff4cc);
+    padding: 100px;
+    max-width: 1450px;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    border-radius: 20px;
+}
+.profil-card {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.foto img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 6px solid white;
+    object-fit: cover;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* teks pas di tengah */
+}
+.info h4 {
+    margin: 0;
+    color: #333;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.info h2 {
+    margin-top: 6px;
+    color: #0077b6;
+    font-size: 22px;
+}
+.info .sambutan {
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 520px;
+}
+.navbar-spacer {
+    height: 40px;   
+    background: #f4f4f4;
+    
+}
+
+/* ================= VISI MISI ================= */
+.visi-misi {
+    padding: 30px 15px;
+}
+
+.visi-misi .box {
+    max-width:1450px;
+    margin: auto;
+    background: linear-gradient(90deg, #e6f2f0, #fff3d9);
+    padding: 25px;
+    border-radius: 12px;
+    color: #333;
+}
+
+.visi-misi h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+.visi-misi h4 {
+    margin-top: 20px;
+}
+
+.visi-misi ol {
+    padding-left: 18px;
+}
+
+.visi-misi li {
+    margin-bottom: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .profil-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto img {
+        width: 150px;
+        height: 150px;
+    }
+    .info .sambutan {
+        max-width: 100%;
+        text-align: center;
+    }
+}

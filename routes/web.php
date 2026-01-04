@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfilController;
 
 // Halaman welcome
 Route::get('/', function () {
@@ -35,3 +36,7 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/dashboard', function () {
     return view('user.dashboard-public');
 })->name('dashboard');
+Route::get('/profil-kecamatan', [UserController::class, 'profilKecamatan'])
+    ->name('user.profil.kecamatan');
+    Route::get('/profil-kecamatan', [ProfilController::class, 'kecamatan'])
+    ->name('profil.kecamatan');

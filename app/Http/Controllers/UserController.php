@@ -17,4 +17,8 @@ class UserController extends Controller
 
         return view('user.index', compact('users'));
     }
+    public function profilKecamatan()
+    {
+        return view('user.profil-kecamatan');
+    }
 }

@@ -12,10 +12,10 @@ body {
 /* NAVBAR */
 .navbar {
     background: linear-gradient(90deg, #e6f2f0, #fff3d9);
-    padding: 15px 0;
+    padding: 20px 0;
     position: relative;
     z-index: 1000;
-    border-radius: 15px;
+    border-radius: 0px 0px 25px 25px;
 }
 
 .nav-container {
@@ -31,17 +31,30 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
+    text-decoration: none;
+    color: #333;
 }
 
 .logo img {
     width: 100px;
 }
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
 
-nav a {
+.nav-menu a {
     margin-left: 20px;
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+.nav-menu a:hover {
+    background-color: rgba(0, 119, 182, 0.15);
+    color: #0077b6;
 }
 .menu-icon {
     display: none;
@@ -175,8 +188,8 @@ nav a {
 /* FOOTER */
 footer {
     background: linear-gradient(90deg, #e6f2f0, #fff3d9);
-    padding: 40px 20px;
-    border-radius: 15px;
+    padding: 40px 20px 20px;
+    border-radius: 30px 30px 0px 0px;
 }
 
 .footer-content {
@@ -187,10 +200,20 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
 }
-
+.footer-copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
 .footer-left {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+}
+.footer-left h3 {
+    margin: 0;
+    font-size: 30px;
 }
 
 .footer-left img {
@@ -202,12 +225,16 @@ footer {
     margin-left: 10px;
 }
 
-footer p {
-    text-align: center;
-    margin-top: 20px;
-    color: #777;
+.footer-left p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 20px;
 }
-
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .visi-misi .box {
     color: #333; /* WAJIB */
 }
@@ -220,22 +247,25 @@ footer p {
         display: block;
     }
 
-    nav {
+    .nav-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
         background: white;
-        margin-top: 15px;
-        padding: 10px 0;
-        border-radius: 12px;
+        flex-direction: column;
+        padding: 15px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    nav a {
-        display: block;
-        padding: 10px 20px;
+    .nav-menu.show {
+        display: flex;
     }
-
-    nav.show {
-        display: block;
+    .nav-menu a {
+        margin: 10px 0;
+        margin-right: auto;
     }
 
     /* DROPDOWN MOBILE */

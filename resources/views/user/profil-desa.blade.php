@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Kecamatan</title>
+    <title>Profil Desa</title>
 
     <link rel="stylesheet" href="{{ asset('css/dashbord.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profil-kecamatan.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profil-desa.css') }}">
-
 </head>
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 <header class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -25,7 +24,7 @@
             </a>
         </div>
 
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="navMenu">
             <div class="dropdown">
                 <a href="#" class="dropdown-toggle">
                     Profil <span class="arrow">▾</span>
@@ -39,57 +38,60 @@
             <a href="{{ route('infografis') }}">Infografis</a>
             <a href="{{ route('media') }}">Media Center</a>
             <a href="{{ route('layanan.surat') }}">Layanan Surat</a>
-            <a href="{{ route('pengajuan.surat') }}">Pengajuan Surat</a>
+            <a href="{{ route('pengajuan.surat') }}">Pengajuan </a>
         </nav>
+
         <!-- ICON MENU -->
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </div>
 </header>
-<div class="navbar-spacer"></div>
+<!-- PROFIL DESA -->
+<main class="profil-desa">
 
-<!-- HEADER PROFIL -->
-<section class="profil-header">
-    <div class="profil-card">
-        <div class="foto">
-            <img src="{{ asset('images/camat.png') }}" alt="Camat Cihanjuang">
-        </div>
+<!-- Tentang Desa -->
+<section class="tentang-desa">
+    <div class="tentang-card">
+        <div class="tentang-img">
+        <img src="{{ asset('images/desa.jpg') }}" alt="Desa Cihanjuang">
+    </div>
 
-        <div class="info">
-            <h4>KEPALA KECAMATAN CIHANJUANG</h4>
-            <h2>BAPAK AGUS</h2>
-            <p class="sambutan">
-                Assalamu’alaikum warahmatullahi wabarakatuh.  
-                Selamat datang di website resmi Kecamatan Cihanjuang sebagai
-                sarana informasi, komunikasi, dan pelayanan kepada masyarakat.
+    <div class="tentang-text">
+        <h3>Tentang Desa</h3>
+            <p>
+                Cihanjuang dikenal sebagai sentra penghasil kelapa
+                dan pertanian yang dapat mensuplai bahan baku
+                daerah Bandung saja tetapi Jakarta dan daerah
+                sekitarnya juga. Terdapat beberapa daerah
+                perbukitan, sungai, sawah, dan tanah-tanah subur.
+                Nama Cihanjuang berasal dari kata <b>“ci”</b>
+                yang berarti sungai dan <b>“hanjuang”</b> yaitu
+                tanaman yang banyak tumbuh di wilayah ini.
             </p>
         </div>
     </div>
 </section>
 
-<!-- VISI MISI -->
-<section class="visi-misi">
-    <div class="box">
-        <h3>Visi Misi</h3>
+<!-- Lambang Desa -->
+<section class="tentang-desa lambang-section">
+    <div class="tentang-card">
+        <div class="tentang-img">
+            <img src="{{ asset('images/logocihanjuang.png') }}" alt="Lambang Desa">
+        </div>
 
-        <h4>Visi</h4>
-        <p>
-            Masyarakat Desa Cihanjuang yang Mandiri, Aman, Sejahtera dan Adil
-            berlandaskan iman dan taqwa
-        </p>
-
-        <h4>Misi</h4>
-        <ol>
-            <li>Mewujudkan masyarakat yang berakhlak mulia, bermoral, beretika berbudaya dan beradab berlandaskan keimanan;</li>
-            <li>Mewujudkan struktur ekonomi yang kuat melalui pengembangan kewirausahaan;</li>
-            <li>Meningkatkan kualitas dan produktivitas sumber daya manusia;</li>
-            <li>Meningkatkan peranan perempuan dan pemuda dalam pembangunan;</li>
-            <li>Revitalisasi potensi pertanian, peternakan dan lingkungan hidup;</li>
-            <li>Meningkatkan infrastruktur dasar dan fasilitas kesehatan;</li>
-            <li>Menciptakan situasi keamanan yang kondusif;</li>
-            <li>Meningkatkan kualitas pelayanan publik.</li>
-        </ol>
+        <div class="tentang-text">
+            <h3>Lambang Desa</h3>
+            <p>
+                Lambang Desa Cihanjuang melambangkan persatuan,
+                kesejahteraan, dan semangat gotong royong masyarakat.
+                Bentuk dan warna pada lambang mencerminkan
+                kekayaan alam, budaya, serta nilai luhur yang
+                dijunjung tinggi oleh masyarakat Desa Cihanjuang.
+            </p>
+        </div>
     </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>

@@ -2,14 +2,11 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Kecamatan</title>
-
+    <title>Infografis</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/infografis.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashbord.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/profil-kecamatan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/profil-desa.css') }}">
-
-</head>
 <body>
 
 <!-- NAVBAR -->
@@ -41,55 +38,38 @@
             <a href="{{ route('layanan.surat') }}">Layanan Surat</a>
             <a href="{{ route('pengajuan.surat') }}">Pengajuan Surat</a>
         </nav>
+
         <!-- ICON MENU -->
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </div>
 </header>
-<div class="navbar-spacer"></div>
 
-<!-- HEADER PROFIL -->
-<section class="profil-header">
-    <div class="profil-card">
-        <div class="foto">
-            <img src="{{ asset('images/camat.png') }}" alt="Camat Cihanjuang">
-        </div>
-
-        <div class="info">
-            <h4>KEPALA KECAMATAN CIHANJUANG</h4>
-            <h2>BAPAK AGUS</h2>
-            <p class="sambutan">
-                Assalamu’alaikum warahmatullahi wabarakatuh.  
-                Selamat datang di website resmi Kecamatan Cihanjuang sebagai
-                sarana informasi, komunikasi, dan pelayanan kepada masyarakat.
-            </p>
-        </div>
+<!-- SEARCH -->
+<div class="container mt-4">
+    <div class="search-box d-flex align-items-center">
+        <input type="text" placeholder="Search">
     </div>
-</section>
+</div>
 
-<!-- VISI MISI -->
-<section class="visi-misi">
-    <div class="box">
-        <h3>Visi Misi</h3>
+<!-- GRID INFOGRAFIS -->
+<div class="container mt-5">
+    <div class="row g-4">
 
-        <h4>Visi</h4>
-        <p>
-            Masyarakat Desa Cihanjuang yang Mandiri, Aman, Sejahtera dan Adil
-            berlandaskan iman dan taqwa
-        </p>
+        @for ($i = 0; $i < 6; $i++)
+        <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+                <img src="{{ asset('images/desa.jpg') }}" class="img-fluid">
 
-        <h4>Misi</h4>
-        <ol>
-            <li>Mewujudkan masyarakat yang berakhlak mulia, bermoral, beretika berbudaya dan beradab berlandaskan keimanan;</li>
-            <li>Mewujudkan struktur ekonomi yang kuat melalui pengembangan kewirausahaan;</li>
-            <li>Meningkatkan kualitas dan produktivitas sumber daya manusia;</li>
-            <li>Meningkatkan peranan perempuan dan pemuda dalam pembangunan;</li>
-            <li>Revitalisasi potensi pertanian, peternakan dan lingkungan hidup;</li>
-            <li>Meningkatkan infrastruktur dasar dan fasilitas kesehatan;</li>
-            <li>Menciptakan situasi keamanan yang kondusif;</li>
-            <li>Meningkatkan kualitas pelayanan publik.</li>
-        </ol>
+                <div class="card-content text-center">
+                    <h5>Back To Scool</h5>
+                    <p>12 Desember 2025</p>
+                </div>
+            </div>
+        </div>
+        @endfor
+
     </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -119,12 +99,30 @@ function toggleMenu() {
     document.querySelector('.nav-menu').classList.toggle('show');
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-
-dropdownToggle.addEventListener('click', function (e) {
+document.querySelector('.dropdown-toggle').addEventListener('click', function (e) {
     e.preventDefault();
-        this.parentElement.classList.toggle('active');
+    this.parentElement.classList.toggle('active');
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+const cards = document.querySelectorAll('.info-card');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+         }
+    });
+});
+
+cards.forEach(card => observer.observe(card));
+
+// KLIK LUAR NUTUP
+window.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.dropdown');
+        if (dropdown && !dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
     });
 });
 </script>

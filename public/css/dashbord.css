@@ -11,11 +11,17 @@ body {
 
 /* NAVBAR */
 .navbar {
+    all: unset;
+    display: block;
+}
+
+.navbar {
     background: linear-gradient(90deg, #e6f2f0, #fff3d9);
     padding: 20px 0;
     position: relative;
     z-index: 1000;
     border-radius: 0px 0px 25px 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -50,24 +56,57 @@ body {
     font-weight: 500;
     padding: 6px 10px;
     border-radius: 8px;
-    transition: all 0.25s ease;
 }
+
 .nav-menu a:hover {
     background-color: rgba(0, 119, 182, 0.15);
     color: #0077b6;
 }
+
 .menu-icon {
     display: none;
     font-size: 28px;
     cursor: pointer;
     user-select: none;
 }
+
 .logo-link {
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
     color: inherit;
+}
+
+/* hover naik dikit */
+.nav-menu a:hover {
+    transform: translateY(-2px);
+}
+
+/* efek tekan */
+.nav-menu a:active {
+    transform: scale(0.95);
+    background: #0077b6;
+    color: white;
+}
+
+/* ripple effect */
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.nav-menu a:active::after {
+    width: 120px;
+    height: 120px;
 }
 
 /* DROPDOWN PROFIL */
@@ -84,6 +123,7 @@ body {
     font-size: 12px;
     margin-left: 4px;
 }
+
 
 /* Desktop dropdown */
 .dropdown-menu {
@@ -131,8 +171,42 @@ body {
     object-fit: cover;
     object-position: center;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+.hero img {
+    transition: transform 0.6s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.04);
+}
+
+
+/* SECTION MUNCUL */
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* DROPDOWN HALUS */
+.dropdown-menu {
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.dropdown.active .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+}
 /* SECTION */
 .section {
     max-width: 1200px;
@@ -140,6 +214,7 @@ body {
     padding: 25px;
     background: linear-gradient(90deg, #e6f2f0, #fff3d9);
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .section-header {
@@ -177,12 +252,26 @@ body {
 .activity h4 {
     margin-bottom: 10px;
 }
+.card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card:active {
+    transform: scale(0.97);
+}
 
 /* MAP */
 .map-box {
     height: 350px;
     background: #ddd;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -190,6 +279,8 @@ footer {
     background: linear-gradient(90deg, #e6f2f0, #fff3d9);
     padding: 40px 20px 20px;
     border-radius: 30px 30px 0px 0px;
+    box-shadow: 10px 25px 0px 0px
+    rgba(0,0,0,0.1);
 }
 
 .footer-content {

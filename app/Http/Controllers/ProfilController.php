@@ -10,4 +10,9 @@ class ProfilController extends Controller
     {
         return view('user.profil-kecamatan');
     }
+    public function desa()
+    {
+        return view('user.profil-desa');
+    }
+
 }

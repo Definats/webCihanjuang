@@ -1,9 +1,9 @@
-/* ===== BODY ===== */
+/* BODY */
 body {
     background: #f4f4f4;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 .profil-header {
     background: linear-gradient(120deg, #dff3f8, #fff4cc);
     padding: 100px;
@@ -12,6 +12,7 @@ body {
     margin: auto;
     z-index: 1;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 .profil-card {
     max-width: 900px;
@@ -57,7 +58,7 @@ body {
     
 }
 
-/* ================= VISI MISI ================= */
+/* VISI MISI */
 .visi-misi {
     padding: 30px 15px;
 }
@@ -69,6 +70,7 @@ body {
     padding: 25px;
     border-radius: 12px;
     color: #333;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .visi-misi h3 {
@@ -89,7 +91,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .profil-card {
         flex-direction: column;

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <header class="navbar">
     <div class="nav-container">
         <div class="logo">
@@ -28,36 +28,26 @@
                 </a>
                 <div class="dropdown-menu">
                     <a href="{{ route('profil.kecamatan') }}">Profil Kecamatan</a>
-                    <a href="#">Profil Desa</a>
+                    <a href="{{ route('profil.desa') }}" class="active">Profil Desa</a>
                 </div>
             </div>
 
-            <a href="#">Infografis</a>
-            <a href="#">Media Center</a>
-            <a href="#">Layanan Surat</a>
-            <a href="#">Pengajuan Surat</a>
+            <a href="{{ route('infografis') }}">Infografis</a>
+            <a href="{{ route('media') }}">Media Center</a>
+            <a href="{{ route('layanan.surat') }}">Layanan Surat</a>
+            <a href="{{ route('pengajuan.surat') }}">Pengajuan Surat</a>
         </nav>
 
         <!-- ICON MENU -->
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </div>
 </header>
-<script>
-function toggleMenu() {
-    document.querySelector('.nav-menu').classList.toggle('show');
-}
-
-document.querySelector('.dropdown-toggle').addEventListener('click', function (e) {
-    e.preventDefault();
-    this.parentElement.classList.toggle('active');
-});
-</script>
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
     <img src="{{ asset('images/postercihanjuang.png') }}" alt="Hero Desa">
 </section>
 
-<!-- ================= BERITA ================= -->
+<!-- BERITA  -->
 <section class="section">
     <div class="section-header">
         <h2>Berita Terbaru</h2>
@@ -74,7 +64,7 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function (e
     </div>
 </section>
 
-<!-- ================= KEGIATAN ================= -->
+<!-- KEGIATAN -->
 <section class="section">
     <div class="section-header">
         <h2>Kegiatan Desa</h2>
@@ -93,13 +83,13 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function (e
     </div>
 </section>
 
-<!-- ================= PETA ================= -->
+<!-- PETA -->
 <section class="section">
     <h2>Peta</h2>
     <div class="map-box"></div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-content">
         <div class="footer-left">
@@ -122,5 +112,37 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function (e
         © 2025 Layanan Informasi Desa Cihanjuang
     </p>
 </footer>
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-menu').classList.toggle('show');
+}
+
+document.querySelector('.dropdown-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle('active');
+});
+
+// SCROLL ANIMATION
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+sections.forEach(sec => observer.observe(sec));
+
+
+// CLOSE DROPDOWN KALAU KLIK LUAR
+window.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.dropdown');
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+.profil-desa {
+    padding: 40px 20px;
+}
+
+/* Tentang Desa */
+.tentang-card {
+    display: flex;
+    gap: 25px;
+    background: linear-gradient(135deg, #e6f2ee, #f6f3d6);
+    border-radius: 15px;
+    padding: 100px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.tentang-img img {
+    width: 500px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.tentang-text h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.tentang-text p {
+    text-align: justify;
+    line-height: 2.0;
+}
+.tentang-desa {
+    margin-bottom: 50px;
+}
+
+/* Lambang */
+.lambang-desa {
+    margin-top: 100px;
+}
+
+.lambang-card {
+    background: linear-gradient(135deg, #e6f2ee, #f6f3d6);
+    border-radius: 15px;
+    padding: 120px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.lambang-card img {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.link-lambang {
+    display: inline-block;
+    color: #1d6fa5;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.lambang-section .tentang-card {
+    background: linear-gradient(135deg, #f0f7ff, #eaf4e8);
+}
+.lambang-section .tentang-card {
+    flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tentang-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tentang-img img {
+        width: 100%;
+    }
+}

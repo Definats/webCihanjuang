@@ -38,5 +38,21 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 Route::get('/profil-kecamatan', [UserController::class, 'profilKecamatan'])
     ->name('user.profil.kecamatan');
-    Route::get('/profil-kecamatan', [ProfilController::class, 'kecamatan'])
+Route::get('/profil-kecamatan', [ProfilController::class, 'kecamatan'])
     ->name('profil.kecamatan');
+Route::get('/profil-desa', [ProfilController::class, 'desa'])
+    ->name('profil.desa');
+Route::get('/infografis', function () {
+    return view('user.infografis');
+})->name('infografis');
+Route::get('/media', function () {
+    return view('user.media-center');
+})->name('media');
+
+Route::get('/layanan-surat', function () {
+    return view('user.layanan-surat');
+})->name('layanan.surat');
+
+Route::get('/pengajuan-surat', function () {
+    return view('user.pengajuan-surat');
+})->name('pengajuan.surat');

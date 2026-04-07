@@ -10,9 +10,15 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-       if (Auth::check() && Auth::user()->role == 'admin') {
-            return $next($request);
+        if (! $request->expectsJson()) {
+
+            // kalau akses admin
+            if (!auth()->guard('admins')->check()) {
+                return redirect()->route('admin.login'); // ✅ benar
+            }
+
+            // default user
+           return $next($request); // kalau nanti ada user login
         }
-        return redirect('/admin/login')->withErrors('Anda harus login sebagai admin.');
     }
 }

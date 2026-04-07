@@ -1,0 +1,26 @@
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+/* VISI MISI BIAR BAGUS */
+.result-text .row {
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.result-text .row span {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.result-text .row p {
+    background: #f4f6f8;
+    padding: 10px;
+    border-radius: 8px;
+}

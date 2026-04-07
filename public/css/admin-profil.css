@@ -1,0 +1,170 @@
+/* LAYOUT */
+.layout {
+    display: flex;
+}
+
+/* SIDEBAR FIX */
+.sidebar {
+    width: 250px;
+    background: #1f6f8b;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ACTIVE MENU */
+.sidebar .active {
+    background: #ffffff33;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* SUBMENU */
+.submenu {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+    background: #f4f6f8;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    background: #1f6f8b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logout {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* TITLE */
+.title {
+    margin: 20px 0;
+}
+
+/* CARD */
+.card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+.form-card input,
+.form-card textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+/* BUTTON */
+.btn {
+    background: #1f6f8b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* RESULT */
+.result-card {
+    background: #f9fbfc;
+}
+
+.result-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-text p {
+    margin: 10px 0;
+}
+
+.result-text span {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+}
+.result-text {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.row span {
+    width: 120px;
+    font-weight: bold;
+}
+
+.row p {
+    margin: 0;
+}
+.row span::after {
+    content: " :";
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+    margin-top: 15px;
+}
+
+.edit-btn button {
+    background: #1f6f8b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}

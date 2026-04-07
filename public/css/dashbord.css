@@ -384,4 +384,20 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+    .container {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-box, .preview-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+    }
+
+    .preview-box img {
+        width: 150px;
+        border-radius: 50%;
+    }
 }

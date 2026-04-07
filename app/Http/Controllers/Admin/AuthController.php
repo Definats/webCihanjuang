@@ -11,7 +11,6 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         return view('admin.login');
-        return redirect()->intended(route('admin.dashboard'));
     }
 
     public function login(Request $request)
@@ -19,8 +18,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
     if (Auth::guard('admins')->attempt($credentials)) {
-        // login berhasil
-        return redirect()->intended('/admin/dashboard');
+        return redirect()->route('admin.dashboard');
     }
 
     return back()->withErrors(['email' => 'Email atau password salah']);

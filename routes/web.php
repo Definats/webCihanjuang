@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProfilKecamatanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfilController;
 
@@ -56,3 +57,32 @@ Route::get('/layanan-surat', function () {
 Route::get('/pengajuan-surat', function () {
     return view('user.pengajuan-surat');
 })->name('pengajuan.surat');
+
+// USER
+Route::get('/profil-kecamatan', function () {
+    $data = \App\Models\ProfilKecamatan::first();
+    return view('user.profil-kecamatan', compact('data'));
+})->name('profil.kecamatan');
+
+Route::get('/profil-kecamatan', [ProfilController::class, 'kecamatan'])->name('profil.kecamatan');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    // LOGIN & LOGOUT
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    // semua halaman admin butuh auth + admin middleware
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        // Profil Kecamatan
+        Route::get('/profil-kecamatan', [ProfilKecamatanController::class, 'index'])->name('profil.kecamatan');
+        Route::post('/profil-kecamatan', [ProfilKecamatanController::class, 'store']);
+
+        // Visi & Misi
+        Route::get('/visi-misi', [ProfilKecamatanController::class, 'visiMisi'])->name('visi-misi.index');
+        Route::post('/visi-misi', [ProfilKecamatanController::class, 'storeVisiMisi'])->name('visi-misi.store');
+    });
+});

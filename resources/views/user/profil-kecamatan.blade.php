@@ -51,16 +51,14 @@
 <section class="profil-header">
     <div class="profil-card">
         <div class="foto">
-            <img src="{{ asset('images/camat.png') }}" alt="Camat Cihanjuang">
+            <img src="{{ $data && $data->foto ? asset('uploads/'.$data->foto) : asset('images/camat.png') }}">
         </div>
 
         <div class="info">
-            <h4>KEPALA KECAMATAN CIHANJUANG</h4>
-            <h2>BAPAK AGUS</h2>
+            <h4>{{ $data->jabatan ?? '-' }}</h4>
+            <h2>{{ $data->nama ?? '-' }}</h2>
             <p class="sambutan">
-                Assalamu’alaikum warahmatullahi wabarakatuh.  
-                Selamat datang di website resmi Kecamatan Cihanjuang sebagai
-                sarana informasi, komunikasi, dan pelayanan kepada masyarakat.
+                {{ $data->deskripsi ?? '-' }}
             </p>
         </div>
     </div>
@@ -72,21 +70,17 @@
         <h3>Visi Misi</h3>
 
         <h4>Visi</h4>
-        <p>
-            Masyarakat Desa Cihanjuang yang Mandiri, Aman, Sejahtera dan Adil
-            berlandaskan iman dan taqwa
-        </p>
+        <p>{{ $visiMisi->visi ?? '-' }}</p>
 
         <h4>Misi</h4>
         <ol>
-            <li>Mewujudkan masyarakat yang berakhlak mulia, bermoral, beretika berbudaya dan beradab berlandaskan keimanan;</li>
-            <li>Mewujudkan struktur ekonomi yang kuat melalui pengembangan kewirausahaan;</li>
-            <li>Meningkatkan kualitas dan produktivitas sumber daya manusia;</li>
-            <li>Meningkatkan peranan perempuan dan pemuda dalam pembangunan;</li>
-            <li>Revitalisasi potensi pertanian, peternakan dan lingkungan hidup;</li>
-            <li>Meningkatkan infrastruktur dasar dan fasilitas kesehatan;</li>
-            <li>Menciptakan situasi keamanan yang kondusif;</li>
-            <li>Meningkatkan kualitas pelayanan publik.</li>
+            @if($visiMisi && $visiMisi->misi)
+                @foreach(explode(';', $visiMisi->misi) as $item)
+                    <li>{{ trim($item) }}</li>
+                @endforeach
+            @else
+                <li>-</li>
+            @endif
         </ol>
     </div>
 </section>
